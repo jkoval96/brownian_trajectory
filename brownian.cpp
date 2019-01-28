@@ -12,7 +12,7 @@ using namespace svg;
 
 double uniformRandom()
 {
-  return ( (double)(rand()) + 1. )/( (double)(RAND_MAX) + 1. );
+  	return ( (double)(rand()) + 1. )/( (double)(RAND_MAX) + 1. );
 }
 
 double normalRandom(double mu, double sigma) //Box-Muller metoda
@@ -102,4 +102,6 @@ int main() {
 	}
 		
     delete[] cas;
+    
+    return 0;
 }
