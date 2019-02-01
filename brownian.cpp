@@ -30,7 +30,7 @@ int generator(double *cas, double dt, int pocetDielikov, double *pole) {
 	pole[0]=0;
 	
 	for(int i = 1; i <= pocetDielikov; i++) {
-	pole[i] = pole[i-1] + normalRandom(0,dt);
+	pole[i] = pole[i-1] + normalRandom(0,cas[i]-cas[i-1]);
 	}
 	
 	return 0;
@@ -102,6 +102,4 @@ int main() {
 	}
 		
     delete[] cas;
-    
-    return 0;
 }
