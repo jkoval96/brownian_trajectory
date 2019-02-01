@@ -25,7 +25,7 @@ double normalRandom(double mu, double sigma) //Box-Muller metoda
 	return z0 * sigma + mu; 
 }
 
-int generator(double *cas, double dt, int pocetDielikov, double *pole) {
+int generator(double *cas, int pocetDielikov, double *pole) {
 
 	pole[0]=0;
 	
@@ -46,7 +46,7 @@ void ulozenieTrajektorii(double **pole, int N, double dt, int pocetDielikov, dou
 	Polyline os(Stroke(1.5,Color::Yellow));
 
 	for(int j = 0; j < N; j++) {
-		generator(cas,dt,pocetDielikov,pole[j]);
+		generator(cas,pocetDielikov,pole[j]);
 		
 		if((pole[j][1] < 0) &&(pole[j][2] > (sqrt(3)+1)*pole[j][1])) {
 			pocitadlo++;
